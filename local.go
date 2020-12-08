@@ -108,7 +108,7 @@ func main() {
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/lesson/", lessonHandler)
 
-	origin := &url.URL{Scheme: "https", Host: "tairitian"}
+	origin := &url.URL{Scheme: "https", Host: "tairitian.cn"}
 	http.Handle(socketPath, socket.NewHandler(origin))
 
 	registerStatic(root)

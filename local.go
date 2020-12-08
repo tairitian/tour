@@ -108,7 +108,7 @@ func main() {
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/lesson/", lessonHandler)
 
-	origin := &url.URL{Scheme: "http", Host: host + ":" + port}
+	origin := &url.URL{Scheme: "https", Host: "tairitian"}
 	http.Handle(socketPath, socket.NewHandler(origin))
 
 	registerStatic(root)
@@ -224,4 +224,4 @@ func startBrowser(url string) bool {
 var prepContent = func(r io.Reader) io.Reader { return r }
 
 // socketAddr returns the WebSocket handler address.
-var socketAddr = func() string { return "ws://" + httpAddr + socketPath }
+var socketAddr = func() string { return "" }
